@@ -3,8 +3,8 @@
 // @name:zh-TW         Twitter 追蹤連結移除器
 // @namespace          https://gnehs.net/
 // @version            0.1
-// @description        Remove the link tracker on Twitter.
-// @description:zh-TW  移除 Twitter 上的連結追蹤器。
+// @description        Remove Twitter's link tracker.
+// @description:zh-TW  移除 Twitter 的連結追蹤器。
 // @author             gnehs
 // @match              https://twitter.com/*
 // @icon               https://www.google.com/s2/favicons?sz=64&domain=twitter.com
@@ -13,7 +13,7 @@
 if (!localStorage["alert.msg"]) {
   let lang = navigator.language || navigator.userLanguage;
   if (lang === 'zh-TW') {
-    alert('感謝安裝Link tracker remover (Twitter)，請點擊「允許」按鈕允許該腳本讀取你的剪貼簿。');
+    alert('感謝安裝 Link tracker remover (Twitter)，請點擊「允許」按鈕允許該腳本讀取你的剪貼簿。');
   } else {
     alert('Thanks to the installation of Link tracker remover (Twitter), you need to allow the script to read your clipboard by clicking the "Allow" button.');
   }
