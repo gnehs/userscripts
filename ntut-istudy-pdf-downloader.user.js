@@ -1,18 +1,14 @@
 // ==UserScript==
 // @name         北科 i 學園 PDF 下載工具
 // @namespace    https://gnehs.net/
-// @version      0.2.1
+// @version      0.2.2
 // @description  協助尼下載北科 i 學園 PDF 的好朋友
 // @author       gnehs
 // @match        https://istudy.ntut.edu.tw/learn/path/viewPDF.php*
 // @require      https://cdn.jsdelivr.net/npm/sweetalert2@11
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=edu.tw
 // @grant        none
-// ==/UserScript== 
-let swaltheme = document.createElement('link');
-swaltheme.rel = 'stylesheet';
-swaltheme.href = `https://cdn.jsdelivr.net/npm/@sweetalert2/theme-borderless@5.0.7/borderless.min.css`
-document.getElementsByTagName('head')[0].appendChild(swaltheme);
+// ==/UserScript==  
 function addGlobalStyle(css) {
   var head, style;
   head = document.getElementsByTagName('head')[0];
@@ -23,7 +19,22 @@ function addGlobalStyle(css) {
   head.appendChild(style);
 }
 
-addGlobalStyle('.swal2-container{z-index: 100000000000; !important}');
+addGlobalStyle(`
+.swal2-container{z-index: 100000000000; !important}
+.swal2-popup.swal2-toast.swal2-show { 
+  animation: custom-toast-show .4s !important;
+}
+@keyframes custom-toast-show {
+  0% {
+    transform: translateX(50px);
+    opacity: 0;
+  } 
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+`);
 window.addEventListener("load", async function (event) {
   let url_string = "https://istudy.ntut.edu.tw/learn/path/" + window.DEFAULT_URL;
   let url = new URL(url_string);
