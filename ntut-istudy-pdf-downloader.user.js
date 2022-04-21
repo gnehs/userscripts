@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         北科 i 學園 PDF 下載工具
 // @namespace    https://gnehs.net/
-// @version      0.2.2
+// @version      0.2.3
 // @description  協助尼下載北科 i 學園 PDF 的好朋友
 // @author       gnehs
 // @match        https://istudy.ntut.edu.tw/learn/path/viewPDF.php*
@@ -14,11 +14,9 @@ function addGlobalStyle(css) {
   head = document.getElementsByTagName('head')[0];
   if (!head) { return; }
   style = document.createElement('style');
-  style.type = 'text/css';
   style.innerHTML = css;
   head.appendChild(style);
 }
-
 addGlobalStyle(`
 .swal2-container{z-index: 100000000000; !important}
 .swal2-popup.swal2-toast.swal2-show { 
@@ -34,6 +32,12 @@ addGlobalStyle(`
     opacity: 1;
   }
 }
+@keyframes swal2-toast-hide {
+  100% {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+}
 `);
 window.addEventListener("load", async function (event) {
   let url_string = "https://istudy.ntut.edu.tw/learn/path/" + window.DEFAULT_URL;
@@ -44,9 +48,9 @@ window.addEventListener("load", async function (event) {
     showConfirmButton: true,
     showCancelButton: true,
     title: `北科 i 學園 PDF 下載工具`,
-    confirmButtonText: `下載 ${url.searchParams.get("id")}`,
+    confirmButtonText: `下載 PDF`,
     cancelButtonText: "關閉",
-    html: ``
+    html: `${url.searchParams.get("id")}`
   }).then(async (result) => {
     if (result.value) {
       let loader = Swal.fire({
