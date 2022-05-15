@@ -32,3 +32,10 @@ Remove Twitter's link tracker.
 幫你自動填寫北科教學評量系統
 
 [Install](https://github.com/gnehs/userscripts/raw/main/ntut-autofill-assessment.user.js)
+
+## 其他
+### Skill for all base64 fix
+Fix base64 decoding
+
+
+[Install](https://github.com/gnehs/userscripts/raw/main/skillsforall.user.js)
