@@ -6,15 +6,15 @@
 // @author       You
 // @match        https://skillsforall.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=skillsforall.com
-// @require      https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js
 // @grant        none
+// @require      https://cdn.jsdelivr.net/gh/ethereumjs/browser-builds/dist/ethereumjs-tx/ethereumjs-tx-1.3.3.min.js
 // ==/UserScript==
-
-window.atob = val => CryptoJS.enc.Base64.parse(val).toString(CryptoJS.enc.Utf8)
+let originalAtob = atob
+window.atob = val => ethereumjs.Buffer.Buffer.from(val,'base64').toString()
 let originalJSONParse = JSON.parse
 
 JSON.parse = val => {
-  console.log('[JSON.parse]', val)
-  return val ? originalJSONParse(val) : {}
+    console.log('[JSON.parse]', val)
+    return val ? originalJSONParse(val) : {}
 }
 window.escape = x => x
