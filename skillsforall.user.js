@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Skill for all fix
 // @namespace    http://gnehs.net/
-// @version      0.1
+// @version      0.1.1
 // @description  修正 Base64 解析錯誤
 // @author       You
 // @match        https://skillsforall.com/*
@@ -10,11 +10,11 @@
 // @grant        none
 // ==/UserScript==
 
-atob = val => CryptoJS.enc.Base64.parse(val).toString(CryptoJS.enc.Utf8)
+window.atob = val => CryptoJS.enc.Base64.parse(val).toString(CryptoJS.enc.Utf8)
 let originalJSONParse = JSON.parse
 
 JSON.parse = val => {
   console.log('[JSON.parse]', val)
   return val ? originalJSONParse(val) : {}
 }
-escape = x => x
+window.escape = x => x
