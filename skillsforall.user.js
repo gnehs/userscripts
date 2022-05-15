@@ -3,7 +3,7 @@
 // @namespace    http://gnehs.net/
 // @version      0.2
 // @description  修正 Base64 解析錯誤
-// @author       You
+// @author       gnehs
 // @match        https://skillsforall.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=skillsforall.com
 // @grant        none
