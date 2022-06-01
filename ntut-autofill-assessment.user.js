@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         北科網路教學評量自動填寫小精靈
 // @namespace    https://gnehs.net/
-// @version      0.3 
+// @version      0.4
 // @description  幫你自動填寫北科教學評量系統
 // @author       gnehs
 // @match        https://isms-nagios.ntut.edu.tw/tgrade/PortalTGrade.jsp
@@ -60,6 +60,7 @@ Swal.fire({
     cancelButtonText: `填不同意`,
     html: `要幫你填嗎？`
 }).then((result) => {
+    document.querySelector(`input[type=CheckBox][name="dec"]`).checked = true
     if (result.isConfirmed) {
         // 同意
         for (let ele of document.querySelectorAll(`tr:not([bgcolor="#CCFFCC"])>td:nth-child(2)>input`)) {
@@ -83,6 +84,8 @@ Swal.fire({
             ele.value = ConsSentences.pickRandom()
         }
     }
+    // 其他
+    [...document.querySelectorAll(`tr:not([bgcolor="#CCFFCC"])>td:nth-child(2)>input[type="checkbox"]`)].at(-1).checked = false
     if (result.isConfirmed || result.isDismissed) {
         Swal.fire('填寫完畢', '記得檢查一下內容再送出', 'success')
     }
