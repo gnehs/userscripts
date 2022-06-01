@@ -21,6 +21,10 @@ Remove Twitter's link tracker.
 協助尼下載北科 i 學園 PDF 的好朋友
 
 [Install](https://github.com/gnehs/userscripts/raw/main/ntut-istudy-pdf-downloader.user.js)
+### 北科 i 學園課程選單分類
+替課程選單新增分類功能
+
+[Install](https://github.com/gnehs/userscripts/raw/main/ntut-istudy-course-select.user.js)
 ### 北科入口自動跳過驗證碼
 免驗證碼登入北科入口
 
