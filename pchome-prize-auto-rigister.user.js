@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         PChome 抽獎自動登記
-// @namespace    http://tampermonkey.net/
-// @version      0.1
+// @namespace    https://gnehs.net/
+// @version      0.1.1
 // @description  自動幫你登記 PChome 抽獎
 // @author       gnehs
 // @match        https://ecvip.pchome.com.tw/web/prize/register*
@@ -11,11 +11,11 @@
 // ==/UserScript==
 
 window.alert = function (message) {
-  Swal.fire({
+  return Swal.fire({
     toast: true,
-    position: 'top-end',
-    title: '提醒',
-    text: message,
+    animation: false,
+    position: 'bottom',
+    title: message,
     icon: 'info',
     showConfirmButton: false,
     timer: 1500
@@ -23,14 +23,7 @@ window.alert = function (message) {
 }
 
 window.addEventListener("load", function (event) {
-  let checkToast = Swal.fire({
-    toast: true,
-    position: 'top-end',
-    title: `檢查中...`,
-    html: `正在檢查獎項`,
-    icon: 'info',
-    showConfirmButton: false
-  })
+  let checkToast = alert("正在檢查獎項…")
   setTimeout(function () {
     checkToast.close();
     if (document.querySelector(".doReg")) {
@@ -48,15 +41,15 @@ window.addEventListener("load", function (event) {
       }, 1000)
     } else {
       if (document.querySelector(`li:nth-last-child(1) span.page`)) {
-
         let page = document.querySelector(`li:nth-last-child(1) span.page`).attributes.getNamedItem("data-act").value
-        alert("正在前往下一頁")
+        alert("正在前往下一頁…")
         location.href = `https://ecvip.pchome.com.tw/web/prize/register&p=${page}`
       } else {
         Swal.fire({
-          title: `完成`,
+          title: `🎉 完成 🎉`,
           html: `所有獎項皆已登記完成！`,
           icon: 'success',
+          confirmButtonText: '好耶！'
         })
       }
     }
@@ -64,9 +57,10 @@ window.addEventListener("load", function (event) {
 });
 function showRegisterDialog() {
   let phone = prompt("請填寫手機號碼：", "");
-  let isOk = confirm(`確定要登記為 ${phone}？`);
+  let isOk = confirm(`確定要登記為「${phone}」？`);
   if (isOk) {
     localStorage["register-data"] = phone;
+    alert("將自動使用此手機號碼與您購物時所登記之電子郵件進行登記。")
   }
   else {
     showRegisterDialog();
