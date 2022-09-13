@@ -2,9 +2,9 @@
 // @name               Twitter link tracker remover
 // @name:zh-TW         Twitter 追蹤連結移除器
 // @namespace          https://gnehs.net/
-// @version            0.1
-// @description        Remove Twitter's link tracker.
-// @description:zh-TW  移除 Twitter 的連結追蹤器。
+// @version            0.2
+// @description        Remove Twitter's link tracker, and replace it with vxtwitter link.
+// @description:zh-TW  移除 Twitter 的連結追蹤器，並將連結改為 vxtwitter 連結來修復預覽圖片。
 // @author             gnehs
 // @match              https://twitter.com/*
 // @icon               https://www.google.com/s2/favicons?sz=64&domain=twitter.com
@@ -27,6 +27,7 @@ document.addEventListener('copy', async (event) => {
       let link = new URL(text);
       link.search = '';
       link.hash = '';
+      link.host = 'vxtwitter.com';
       await navigator.clipboard.writeText(link.href);
     } catch (e) {
       console.log(e);
