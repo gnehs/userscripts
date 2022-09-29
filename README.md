@@ -10,6 +10,7 @@
 | Twitter link tracker remover|Remove Twitter's link tracker. <br>移除 Twitter 的連結追蹤器，並將連結改為 [vxtwitter](https://github.com/ryuuzake/BetterTwitFix) 連結來修復預覽圖片。|[Install](https://github.com/gnehs/userscripts/raw/main/Twitter-link-tracker-remover.user.js)|
 | Twitter 標點符號修正 | Twitter 預設會使用中國標準的標點符號，這個能夠幫你修正回台灣標準。|[Install](https://github.com/gnehs/userscripts/raw/main/twitter-lang-fix.user.js)|
 | PChome 抽獎自動登記 | 自動登記 PChome 抽獎。|[Install](https://github.com/gnehs/userscripts/raw/main/pchome-prize-auto-rigister.user.js)|
+| PChome link Fix | 複製帶有預覽的 PChome 連結|[Install](https://github.com/gnehs/userscripts/raw/main/pchome-link-copy.user.js)|
 ## 北科
 與台北科技大學有關的 userscript
 
