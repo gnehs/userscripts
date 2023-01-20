@@ -1,31 +1,26 @@
 // ==UserScript==
 // @name         PChome 抽獎自動登記
 // @namespace    https://gnehs.net/
-// @version      0.1.1
+// @version      0.2.0
 // @description  自動幫你登記 PChome 抽獎
 // @author       gnehs
 // @match        https://ecvip.pchome.com.tw/web/prize/register*
-// @require      https://cdn.jsdelivr.net/npm/sweetalert2@11
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=pchome.com.tw
 // @grant        none
 // ==/UserScript==
+const alertContainer = document.createElement("div")
+alertContainer.id = "alert-container"
+alertContainer.style = `position: fixed;bottom: 8px;left: 0px;right: 0px;width: 500px;line-height: 1.5;display: inline-block;z-index: 9999;margin: 0px auto;text-align: center;background: rgb(34, 34, 34);border: 1px solid rgb(17, 17, 17);box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px;border-radius: 100em;padding: 16px 24px;font-size: 14px;color: rgb(255, 255, 255);`
+alertContainer.innerHTML = "🥞 載入中…"
+document.body.appendChild(alertContainer)
 
 window.alert = function (message) {
-  return Swal.fire({
-    toast: true,
-    animation: false,
-    position: 'bottom',
-    title: message,
-    icon: 'info',
-    showConfirmButton: false,
-    timer: 1500
-  })
+  alertContainer.innerHTML = message
 }
 
 window.addEventListener("load", function (event) {
-  let checkToast = alert("正在檢查獎項…")
+  alert("✨ 正在檢查獎項…")
   setTimeout(function () {
-    checkToast.close();
     if (document.querySelector(".doReg")) {
       console.log("doreg")
       if (!localStorage["register-data"]) {
@@ -42,15 +37,13 @@ window.addEventListener("load", function (event) {
     } else {
       if (document.querySelector(`li:nth-last-child(1) span.page`)) {
         let page = document.querySelector(`li:nth-last-child(1) span.page`).attributes.getNamedItem("data-act").value
-        alert("正在前往下一頁…")
+        alert("➡️ 正在前往下一頁…")
         location.href = `https://ecvip.pchome.com.tw/web/prize/register&p=${page}`
       } else {
-        Swal.fire({
-          title: `🎉 完成 🎉`,
-          html: `所有獎項皆已登記完成！`,
-          icon: 'success',
-          confirmButtonText: '好耶！'
-        })
+        alert("🎉 所有獎項皆已登記完成！")
+        setTimeout(function () {
+          alertContainer.style.display = "none"
+        }, 3000)
       }
     }
   }, 1000)
