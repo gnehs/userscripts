@@ -28,10 +28,11 @@ function _replaceText_() {
       return;
     }
     if (element.childNodes.length <= 1) {
-
-      if (element.innerHTML.includes("智能")) {
-        element.innerHTML = element.innerHTML.replace(/智能/g, "智障");
-        console.log(element.childNodes.length, element.tagName, element.innerHTML);
+      if (!element.innerHTML.match(/<[^>]*>/g)) {
+        if (element.innerHTML.includes("智能")) {
+          element.innerHTML = element.innerHTML.replace(/智能/g, "智障");
+          console.log(element.childNodes.length, element.tagName, element.innerHTML);
+        }
       }
     }
   });
