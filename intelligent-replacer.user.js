@@ -21,7 +21,6 @@ ob.observe(document, {
 document.addEventListener('DOMContentLoaded', _replaceText_());
 
 function _replaceText_() {
-  const start = new Date();
   document.querySelectorAll("*").forEach((element) => {
     // ignore script and style
     if (element.tagName === "SCRIPT" || element.tagName === "STYLE") {
@@ -36,5 +35,4 @@ function _replaceText_() {
       }
     }
   });
-  console.log(`智障轉換器 - ${new Date() - start}ms`);
 }
