@@ -1,10 +1,11 @@
 // ==UserScript==
 // @name         PChome link Fix
 // @namespace    https://gnehs.net/
-// @version      0.3
+// @version      0.3.1
 // @description  複製帶有預覽的 PChome 連結
 // @author       gnehs
 // @match        https://24h.pchome.com.tw/prod/*
+// @icon         https://p.pancake.tw/favicon.svg
 // @grant        GM_addStyle
 // ==/UserScript==
 
@@ -58,7 +59,7 @@ button.onclick = async function () {
       button.innerHTML = `${copySvg} 複製連結`;
     }, 500);
   } catch (e) {
-    window.prompt("請複製以下內容", text)
+    window.prompt("請複製以下內容", link)
   }
 };
 document.body.appendChild(button);
