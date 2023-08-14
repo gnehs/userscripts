@@ -15,14 +15,14 @@ let buttonStyle = `
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.25rem;
+  gap: 10px;
   font-size: 16px;
   color: #222;
   cursor: pointer;
 }
 .copy-link-button svg{
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
 }
 `;
 GM_addStyle(buttonStyle);
