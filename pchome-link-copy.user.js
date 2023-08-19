@@ -21,6 +21,7 @@
     justify-content: center;
     gap: 0.25rem;
     letter-spacing: -0.05rem;
+    cursor: pointer;
   }
   .copy-link-button svg{
     width: 1rem;
