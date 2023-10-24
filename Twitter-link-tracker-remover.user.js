@@ -26,7 +26,7 @@ if (!localStorage["alert.msg"]) {
 }
 document.addEventListener("copy", async (event) => {
   const text = await navigator.clipboard.readText();
-  if (text.match(/^https:\/\/twitter\.com\/(.+)/)) {
+  if (text.match(/^https:\/\/x\.com\/(.+)/)) {
     try {
       let link = new URL(text);
       link.search = "";
