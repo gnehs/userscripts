@@ -1,18 +1,27 @@
 // ==UserScript==
 // @name         PChome link Fix
 // @namespace    https://gnehs.net/
-// @version      0.4.0
+// @version      0.5.0
 // @description  複製帶有預覽的 PChome 連結
 // @author       gnehs
 // @match        https://24h.pchome.com.tw/prod/*
+// @match        https://p.pancake.tw/prod/*
 // @icon         https://p.pancake.tw/favicon.svg
 // @grant        GM_addStyle
+// @run-at       document-start
 // ==/UserScript==
 (function () {
+  if (location.href.startsWith("https://p.pancake.tw/prod/")) {
+    location.href = location.href.replace(
+      "https://p.pancake.tw/prod/",
+      "https://24h.pchome.com.tw/prod/"
+    );
+  }
+
   let buttonStyle = `
   .copy-link-button {
     all: unset;
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
     background: #fff;
     border-radius: 4px;
     font-weight: bold;
@@ -63,7 +72,6 @@
       button.onclick = async function () {
         let link = location.href
           .replace("https://24h.pchome.com.tw", "https://p.pancake.tw")
-          .replace("/prod/v1/", "/prod/")
           .replace(/\?.*/, "");
         try {
           await navigator.clipboard.writeText(link);
