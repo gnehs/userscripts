@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         PChome link Fix
 // @namespace    https://gnehs.net/
-// @version      0.5.0
+// @version      0.5.1
 // @description  複製帶有預覽的 PChome 連結
 // @author       gnehs
 // @match        https://24h.pchome.com.tw/prod/*
@@ -57,11 +57,11 @@
   });
   function addCopyLinkButton() {
     const container = document.querySelector(
-      ".c-prodBriefing__tool:not(:has(.copy-link-button))"
+      ".c-infoTextToolBar__tool:not(:has(.copy-link-button))"
     );
     if (container) {
-      [...container.querySelectorAll(".c-prodBriefing__tool li")].forEach((x) =>
-        x.remove()
+      [...container.querySelectorAll(".c-infoTextToolBar__tool div")].forEach(
+        (x) => x.remove()
       );
 
       const button = document.createElement("button");
@@ -83,9 +83,7 @@
           window.prompt("請複製以下內容", link);
         }
       };
-      const li = document.createElement("li");
-      li.appendChild(button);
-      container.prepend(li);
+      container.prepend(button);
     }
   }
 })();
