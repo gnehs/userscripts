@@ -26,6 +26,7 @@
 | NCC 型式認證資料查詢 | [Install](https://github.com/gnehs/userscripts/raw/main/ncc-captcha-auto-fill.user.js) |
 | 7-11 貨態追蹤系統 | [Install](https://github.com/gnehs/userscripts/raw/main/eservice-7-11.user.js) |
 | 威秀會員 | [Install](https://github.com/gnehs/userscripts/raw/main/vieshow-captcha-auto-fill.user.js) |
+| 事業廢棄物申報及管理資訊系統 | [Install](https://github.com/gnehs/userscripts/raw/main/waste-moenv-gov-tw.user.js) |
 
 ## 北科
 
