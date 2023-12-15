@@ -16,9 +16,16 @@
 | ~~PChome 抽獎自動登記~~ | （已失效）自動登記 PChome 抽獎。|[Install](https://github.com/gnehs/userscripts/raw/main/pchome-prize-auto-rigister.user.js)|
 | PChome link Fix | 複製帶有預覽的 PChome 連結|[Install](https://github.com/gnehs/userscripts/raw/main/pchome-link-copy.user.js)|
 | 蝦皮短網址 | 複製較短的蝦皮商品連結 |[Install](https://github.com/gnehs/userscripts/raw/main/shopee-link-copy.user.js)|
-| NCC 驗證碼自動填寫 | 自動填寫「NCC 型式認證資料查詢」頁面之驗證碼 |[Install](https://github.com/gnehs/userscripts/raw/main/ncc-captcha-auto-fill.user.js)|
-| 7-11 貨態追蹤系統驗證碼自動填入 | 自動填寫「7-11 貨態追蹤系統」頁面之驗證碼 |[Install](https://github.com/gnehs/userscripts/raw/main/eservice-7-11.user.js)|
 | 智障轉換器 | 自動將頁面中的「智能」轉換為「智障」 |[Install](https://github.com/gnehs/userscripts/raw/main/intelligent-replacer.user.js)|
+
+## 驗證碼
+
+自動填寫驗證碼
+| 名稱 | 安裝 |
+| :------------------------------ | :------------------------------------------------------------------------------------- |
+| NCC 型式認證資料查詢 | [Install](https://github.com/gnehs/userscripts/raw/main/ncc-captcha-auto-fill.user.js) |
+| 7-11 貨態追蹤系統 | [Install](https://github.com/gnehs/userscripts/raw/main/eservice-7-11.user.js) |
+| 威秀會員 | [Install](https://github.com/gnehs/userscripts/raw/main/vieshow-captcha-auto-fill.user.js) |
 
 ## 北科
 
