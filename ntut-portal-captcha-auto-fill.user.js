@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         北科入口網站 - 驗證碼自動填入
 // @namespace    https://gnehs.net/
-// @version      0.1
+// @version      0.2
 // @description  自動填寫「北科入口網站」頁面之驗證碼
 // @author       gnehs
 // @match        https://nportal.ntut.edu.tw/index.do*
@@ -25,12 +25,34 @@ setInterval(() => {
 }, 100);
 
 async function decodeCaptcha() {
+  const opfsRoot = await navigator.storage.getDirectory();
+  let model;
+  try {
+    model = await opfsRoot.getFileHandle("model.onnx");
+    model = await model.getFile();
+    model = await model.arrayBuffer();
+  } catch (e) {
+    console.log(e);
+  }
+  if (!model) {
+    console.log("model not found, downloading...");
+    // save model to Storage
+    model = await fetch(
+      "https://gnehs.github.io/NTUT-Portal-CAPTCHA-Recognition/model.onnx"
+    ).then((res) => res.arrayBuffer());
+    const modelFile = await opfsRoot.getFileHandle("model.onnx", {
+      create: true,
+    });
+    const writable = await modelFile.createWritable();
+    await writable.write(model);
+    await writable.close();
+  }
+
+  // load model
   let captchaInput = document.getElementById("authcode");
   captchaInput.disabled = true;
   captchaInput.value = "模型讀取中⋯";
-  const session = await ort.InferenceSession.create(
-    `https://gnehs.github.io/NTUT-Portal-CAPTCHA-Recognition/model.onnx`
-  );
+  const session = await ort.InferenceSession.create(model);
   captchaInput.value = "辨識中⋯";
   // decode captcha
   let canvas = document.createElement("canvas");
