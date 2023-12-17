@@ -27,17 +27,17 @@
 | 7-11 貨態追蹤系統 | [Install](https://github.com/gnehs/userscripts/raw/main/eservice-7-11.user.js) |
 | 威秀會員 | [Install](https://github.com/gnehs/userscripts/raw/main/vieshow-captcha-auto-fill.user.js) |
 | 事業廢棄物申報及管理資訊系統 | [Install](https://github.com/gnehs/userscripts/raw/main/waste-moenv-gov-tw.user.js) |
-| 北科入口 | [Install](https://github.com/gnehs/userscripts/raw/main/ntut-portal-captcha-auto-fill.user) |
+| 北科入口 | [Install](https://github.com/gnehs/userscripts/raw/main/ntut-portal-captcha-auto-fill.user.js) |
 
 ## 北科
 
 與台北科技大學有關的 userscript
 
-| 名稱                           | 說明                                                                                                                                                                   | 安裝                                                                                        |
-| :----------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------ |
-| 北科入口自動跳過驗證碼         | 免驗證碼登入北科入口<br/> 你可能會需要 Beta 版的 Tampermonkey ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey-beta/gcalenpjmijncebpfijmoaglllgpjagf)) | [Install](https://github.com/gnehs/userscripts/raw/main/ntut-skip-captcha.user.js)          |
-| 北科入口                       | 與上方 userscript 衝突，請擇一安裝                                                                                                                                     | [Install](https://github.com/gnehs/userscripts/raw/main/ntut-portal-captcha-auto-fill.user) |
-| 北科網路教學評量自動填寫小精靈 | 幫你自動填寫北科教學評量系統                                                                                                                                           | [Install](https://github.com/gnehs/userscripts/raw/main/ntut-autofill-assessment.user.js)   |
+| 名稱                           | 說明                                                                                                                                                                   | 安裝                                                                                           |
+| :----------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------- |
+| 北科入口自動跳過驗證碼         | 免驗證碼登入北科入口<br/> 你可能會需要 Beta 版的 Tampermonkey ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey-beta/gcalenpjmijncebpfijmoaglllgpjagf)) | [Install](https://github.com/gnehs/userscripts/raw/main/ntut-skip-captcha.user.js)             |
+| 北科入口自動填寫驗證碼         | 與上方 userscript 衝突，請擇一安裝                                                                                                                                     | [Install](https://github.com/gnehs/userscripts/raw/main/ntut-portal-captcha-auto-fill.user.js) |
+| 北科網路教學評量自動填寫小精靈 | 幫你自動填寫北科教學評量系統                                                                                                                                           | [Install](https://github.com/gnehs/userscripts/raw/main/ntut-autofill-assessment.user.js)      |
 
 ### i 學園
 
