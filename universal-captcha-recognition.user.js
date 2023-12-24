@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         通用驗證碼填入工具
 // @namespace    https://gnehs.net/
-// @version      0.1
+// @version      0.1.1
 // @description  沒有人喜歡驗證碼，本程式透過 ddddocr 在本機完成驗證碼辨識並填入，在支援的網站上再也無需手動輸入驗證碼！
 // @author       gnehs
 // @match        https://irs.thsrc.com.tw/IMINT*
@@ -90,6 +90,7 @@ if (website) {
       document.querySelector(website.captchaReload).click();
     } else {
       captchaInput.value = result;
+      captchaInput.dispatchEvent(new Event("input", { bubbles: true })); // trigger input event
       captchaInput.disabled = false;
     }
   }
