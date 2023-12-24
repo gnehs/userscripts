@@ -5,6 +5,7 @@
 // @description  沒有人喜歡驗證碼，本程式透過 ddddocr 在本機完成驗證碼辨識並填入，在支援的網站上再也無需手動輸入驗證碼！
 // @author       gnehs
 // @match        https://irs.thsrc.com.tw/IMINT*
+// @match        https://www.einvoice.nat.gov.tw/*
 // @grant        GM_addStyle
 // @require      https://cdnjs.cloudflare.com/ajax/libs/onnxruntime-web/1.16.3/ort.webgpu.min.js
 // @resource     model  https://github.com/gnehs/userscripts/raw/main/assets/ddddocr/common.onnx
@@ -22,28 +23,45 @@ const websites = [
     captchaInput: "input#securityCode",
     captchaReload: "#BookingS1Form_homeCaptcha_reCodeLink",
   },
+  {
+    name: "電子發票服務整合平台",
+    url: "https://www.einvoice.nat.gov.tw/",
+    captcha: `[alt="圖形驗證碼"]`,
+    captchaRegex: /^[0-9]{5}$/,
+    captchaParser: (x) => x,
+    captchaInput: "input#captcha",
+    captchaReload: `[aria-label="更新圖形驗證碼"]`,
+  },
 ];
 
 ort.env.wasm.wasmPaths =
   "https://cdnjs.cloudflare.com/ajax/libs/onnxruntime-web/1.16.3/";
-
+async function getResource(key, responseType = "json") {
+  return await fetch(GM_getResourceURL(key)).then((res) => res[responseType]());
+}
 let website = websites.filter((website) =>
   window.location.href.startsWith(website.url)
 )[0];
 if (website) {
   console.log(`[通用驗證碼填入工具] ${website.name}`);
 
-  const captchaInput = document.querySelector(website.captchaInput);
-  captchaInput.disabled = true;
+  let captchaInput = document.querySelector(website.captchaInput);
+  if (!captchaInput) {
+    // wait for captcha input
+    await new Promise((resolve) => {
+      let interval = setInterval(() => {
+        captchaInput = document.querySelector(website.captchaInput);
+        if (captchaInput) {
+          clearInterval(interval);
+          resolve();
+        }
+      }, 100);
+    });
+  }
   captchaInput.value = "模型讀取中⋯";
-
-  const model = await fetch(GM_getResourceURL("model")).then((res) =>
-    res.arrayBuffer()
-  );
-  const modelChar = await fetch(GM_getResourceURL("modelChar")).then((res) =>
-    res.json()
-  );
-  const session = await ort.InferenceSession.create(model);
+  captchaInput.disabled = true;
+  const modelChar = await getResource("modelChar");
+  const session = await ort.InferenceSession.create(GM_getResourceURL("model"));
 
   let captchaImg;
   let captchaImgSrc;
@@ -94,6 +112,10 @@ if (website) {
     canvas.height = dims[2];
     canvas.width = dims[3];
     let ctx = canvas.getContext("2d");
+    // fill white
+    ctx.fillStyle = "#FFFFFF";
+    ctx.fillRect(0, 0, dims[3], dims[2]);
+    // draw captcha
     ctx.filter = "grayscale(1)";
     ctx.drawImage(captchaImg, 0, 0, dims[3], dims[2]);
     const bitmapData = ctx.getImageData(0, 0, dims[3], dims[2]).data;
