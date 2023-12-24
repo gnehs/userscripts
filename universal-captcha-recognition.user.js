@@ -1,6 +1,7 @@
 // ==UserScript==
 // @name         通用驗證碼填入工具
 // @namespace    https://gnehs.net/
+// @icon         https://gnehs.github.io/userscripts/assets/universal-captcha-recognition.png
 // @version      0.2.0
 // @description  沒有人喜歡驗證碼，本程式透過 ddddocr 在本機完成驗證碼辨識並填入，在支援的網站上再也無需手動輸入驗證碼！
 // @author       gnehs
