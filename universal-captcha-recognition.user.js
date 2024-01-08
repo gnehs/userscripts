@@ -2,7 +2,7 @@
 // @name         通用驗證碼填入工具
 // @namespace    https://gnehs.net/
 // @icon         https://gnehs.github.io/userscripts/assets/universal-captcha-recognition.png
-// @version      0.3.0
+// @version      0.3.1
 // @description  沒有人喜歡驗證碼，本程式透過 ddddocr 在本機完成驗證碼辨識並填入，在支援的網站上再也無需手動輸入驗證碼！
 // @author       gnehs
 // @match        https://irs.thsrc.com.tw/IMINT*
@@ -24,7 +24,7 @@ ort.env.wasm.wasmPaths =
       name: "台灣高鐵網路訂位",
       url: "https://irs.thsrc.com.tw/IMINT",
       captcha: "img#BookingS1Form_homeCaptcha_passCode",
-      captchaRegex: /^[A-Z0-9]{4}$/,
+      captchaRegex: /^[A-Z0-9]{4,5}$/,
       captchaParser: (x) => x.toUpperCase(),
       captchaInput: "input#securityCode",
       captchaReload: "#BookingS1Form_homeCaptcha_reCodeLink",
