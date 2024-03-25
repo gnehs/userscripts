@@ -40,7 +40,7 @@ GM_addStyle(buttonStyle);
       '.flex[style="margin-top: 15px;"]:not(:has(.copy-link-button))'
     );
     if (container) {
-      container.querySelector(".V5X-KA").remove();
+      container.querySelector(".idmlsn").remove();
       container.style = `margin-top: 15px; display: grid; grid-template-columns: repeat(2, 1fr);`;
       console.log(new Date().toLocaleString(), "add button");
       let buttonContainer = document.createElement("div");
