@@ -1,10 +1,12 @@
 // ==UserScript==
 // @name         Google Maps Fix
 // @namespace    https://gnehs.net/
-// @version      0.5.1
+// @version      0.6.0
 // @description  複製帶有預覽的 Google Maps 連結
 // @author       gnehs
 // @match        https://www.google.com/maps/*
+// @match        https://www.google.com/maps/
+// @match        https://www.google.com/maps
 // @match        https://p.pancake.tw/gmaps/*
 // @icon         https://p.pancake.tw/favicon.svg
 // @run-at       document-start
