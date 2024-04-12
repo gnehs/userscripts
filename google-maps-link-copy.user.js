@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Google Maps Fix
 // @namespace    https://gnehs.net/
-// @version      0.6.0
+// @version      0.6.1
 // @description  複製帶有預覽的 Google Maps 連結
 // @author       gnehs
 // @match        https://www.google.com/maps/*
@@ -29,7 +29,7 @@
   });
   function updateLink() {
     const input = document.querySelector(
-      `[jsaction="pane.copyLink.clickInput"]`
+      `[jsaction="pane.copyLink.clickInput"],[value^="https://maps.app.goo.gl/"]`
     );
     if (input.value.startsWith("https://maps.app.goo.gl")) {
       input.value = input.value.replace(
