@@ -2,11 +2,11 @@
 // @name               Twitter link tracker remover
 // @name:zh-TW         Twitter 追蹤連結移除器
 // @namespace          https://gnehs.net/
-// @version            0.3
+// @version            0.3.1
 // @description        Remove Twitter's link tracker, and replace it with vxtwitter link.
 // @description:zh-TW  移除 Twitter 的連結追蹤器，並將連結改為 vxtwitter 連結來修復預覽圖片。
 // @author             gnehs
-// @match              https://twitter.com/*
+// @match              https://x.com/*
 // @icon               https://www.google.com/s2/favicons?sz=64&domain=twitter.com
 // @grant              none
 // ==/UserScript==
