@@ -2,7 +2,7 @@
 // @name         通用驗證碼填入工具
 // @namespace    https://gnehs.net/
 // @icon         https://gnehs.github.io/userscripts/assets/universal-captcha-recognition.png
-// @version      0.3.1
+// @version      0.3.2
 // @description  沒有人喜歡驗證碼，本程式透過 ddddocr 在本機完成驗證碼辨識並填入，在支援的網站上再也無需手動輸入驗證碼！
 // @author       gnehs
 // @match        https://irs.thsrc.com.tw/IMINT*
@@ -11,6 +11,7 @@
 // @match        https://b2cinv.tradevan.com.tw/pinvc/Default.aspx
 // @match        https://cart.books.com.tw/member/login*
 // @match        https://hnetreg.cthyh.org.tw/new_CthWebReg/webreg/Reg/clinic_query.aspx*
+// @match        https://cnms.chief.com.tw/*
 // @require      https://cdnjs.cloudflare.com/ajax/libs/onnxruntime-web/1.16.3/ort.webgpu.min.js
 // @run-at       document-end
 // @updateURL    https://github.com/gnehs/userscripts/raw/main/universal-captcha-recognition.user.js
@@ -73,6 +74,14 @@ ort.env.wasm.wasmPaths =
       captchaRegex: /^[A-Z0-9]{4}$/,
       captchaParser: (x) => x.toUpperCase(),
       captchaInput: "input#newtxtCheckCode",
+    },
+    {
+      name: "是方電訊 流量分析暨網管監控系統",
+      url: "https://cnms.chief.com.tw/#/login",
+      captcha: `.imagesblock > img`,
+      captchaRegex: /^[0-9]{5}$/,
+      captchaParser: (x) => x.toUpperCase(),
+      captchaInput: "input.inputblock_input",
     },
   ];
 
