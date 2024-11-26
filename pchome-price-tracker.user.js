@@ -20,7 +20,7 @@
   // Add styles for the chart container
   GM_addStyle(`
       .price-history-container {
-          margin: 20px 0;
+          margin-bottom: 20px;
       }
       .price-history-chart {
           padding: 20px;
