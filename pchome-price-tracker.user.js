@@ -2,7 +2,7 @@
 // @name         PChome 價格追蹤器
 // @namespace    https://gnehs.net/
 // @version      0.0.1
-// @description  使用了 savingsbot.luxurai.com 的價格資訊，在 PChome 商品頁面顯示歷史價格圖表
+// @description  使用了 savingsbot.luxurai.com & biggo.com.tw 的價格資訊，在 PChome 商品頁面顯示歷史價格圖表
 // @author       gnehs
 // @match        https://24h.pchome.com.tw/prod/*
 // @icon         https://p.pancake.tw/favicon.svg

@@ -12,9 +12,9 @@
 | 名稱 | 說明 | 安裝 |
 |:-----|:-----|:-----|
 | Twitter link tracker remover|Remove Twitter's link tracker. <br>移除 Twitter 的連結追蹤器，並將連結改為 [vxtwitter](https://github.com/ryuuzake/BetterTwitFix) 連結來修復預覽圖片。|[Install](https://github.com/gnehs/userscripts/raw/main/Twitter-link-tracker-remover.user.js)|
-| Twitter 標點符號修正 | Twitter 預設會使用中國標準的標點符號，這個能夠幫你修正回台灣標準。|[Install](https://github.com/gnehs/userscripts/raw/main/twitter-lang-fix.user.js)|
-| ~~PChome 抽獎自動登記~~ | （已失效）自動登記 PChome 抽獎。|[Install](https://github.com/gnehs/userscripts/raw/main/pchome-prize-auto-rigister.user.js)|
+| Twitter 標點符號修正 | Twitter 預設會使用中國標準的標點符號，這個能夠幫你修正回台灣標準。|[Install](https://github.com/gnehs/userscripts/raw/main/twitter-lang-fix.user.js)| 
 | PChome link Fix | 複製帶有預覽的 PChome 連結|[Install](https://github.com/gnehs/userscripts/raw/main/pchome-link-copy.user.js)|
+| PChome 價格追蹤 |  使用了 savingsbot.luxurai.com & biggo.com.tw 的價格資訊，在 PChome 商品頁面顯示歷史價格圖表|[Install](https://github.com/gnehs/userscripts/raw/main/pchome-price-tracker.user.js)|
 | Google Maps Fix | 複製帶有中文預覽的 Google Maps 連結|[Install](https://github.com/gnehs/userscripts/raw/main/google-maps-link-copy.user.js)|
 | 蝦皮短網址 | 複製較短的蝦皮商品連結 |[Install](https://github.com/gnehs/userscripts/raw/main/shopee-link-copy.user.js)|
 | 智障轉換器 | 自動將頁面中的「智能」轉換為「智障」 |[Install](https://github.com/gnehs/userscripts/raw/main/intelligent-replacer.user.js)|
