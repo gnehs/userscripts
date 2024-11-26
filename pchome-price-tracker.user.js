@@ -167,18 +167,10 @@
       `;
 
     // Insert before #Additional
-    const additionalSection = document.querySelector("#Additional");
-    if (additionalSection) {
-      additionalSection.parentNode.insertBefore(container, additionalSection);
-    } else {
-      // Fallback: append to product info section if #Additional not found
-      document
-        .querySelector("#ProdReview")
-        .parentNode.insertBefore(
-          container,
-          document.querySelector("#ProdReview")
-        );
-    }
+    const injectSection = document.querySelector('.row.u-mb24 .col-10')
+    if (injectSection) {
+      injectSection.prepend(container);
+    }  
 
     const options = {
       series: [
