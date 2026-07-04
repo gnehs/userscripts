@@ -49,6 +49,12 @@
 | 課程選單分類 | 替課程選單新增分類功能             | [Install](https://github.com/gnehs/userscripts/raw/main/ntut-istudy-course-select.user.js)  |
 | 自動重登入   | 當登入失敗時會自動重新登入         | [Install](https://github.com/gnehs/userscripts/raw/main/ntut-istudy-auto-relogin.user.js)   |
 
+## qBittorrent
+
+| 名稱 | 說明 | 安裝 |
+| :--- | :--- | :--- |
+| RSS 管理器 | 在 qBittorrent WebUI 新增 RSS 管理分頁。安裝後請到 userscript 裡把 `@match` 改成你自己的 qBittorrent WebUI 網址，例如 `http://localhost:8080/*`，不要維持預設的 `*://*/*`。 | [Install](https://github.com/gnehs/userscripts/raw/main/qbittorrent-rss-manager.user.js) |
+
 ## 其他
 
 | 名稱                     | 說明                | 安裝                                                                          |
